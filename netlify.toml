@@ -1,5 +1,5 @@
 [[redirects]]
-from = "/api/*"
+from = "https://nervous-morse-0d4e14.netlify.app/api/*"
   to = "https://ubrs-server.herokuapp.com/api/"  
   status = 200
   force = true
