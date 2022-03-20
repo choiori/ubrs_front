@@ -1,5 +1,5 @@
 [[redirects]]
-from = "/proxy/*"
+from = "/api/*"
   to = "https://ubrs-server.herokuapp.com/api/"  
   status = 200
   force = true
