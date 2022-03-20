@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/proxy/*"
+  to = "https://ubrs-server.herokuapp.com/api/"  
+  status = 200
+  force = true
