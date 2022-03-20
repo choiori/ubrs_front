@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  BASE_URL: 'https://localhost:5000',
+  BASE_URL: 'https://ubrs-server.herokuapp.com/',
   // headers: {
   //   'Content-Type': 'application/json',
   //},
