@@ -17,7 +17,7 @@ const Location = ({ loadChecked }) => {
   const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
-    API.get('/recommendation/addressformap').then((res) => {
+    API.get('/api/recommendation/addressformap').then((res) => {
       setShowMap(true);
       setTempLoc1(res.data[0]);
       setTempLoc2(res.data[1]);

@@ -18,7 +18,7 @@ import {
 const Contents3 = (props) => {
   const [DBresult3, setDBResult3] = useState('로딩중');
   useEffect(() => {
-    API.get('/result/popup/', {
+    API.get('/api/result/popup/', {
       params: { id: 3, dong_name: props.result3[0] },
     }).then((res) => {
       setDBResult3(res.data);

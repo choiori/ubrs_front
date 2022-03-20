@@ -79,7 +79,7 @@ const Details = ({ getResult, loadChecked }) => {
   //const submitServer = () => {
   const submitServer = async () => {
     const requestTime = moment().format('YYYY-MM-DD-HH-mm-ss');
-    await API.post('/recommendation/input', {
+    await API.post('/api/recommendation/input', {
       address: location['location'],
       price: [0, price['price']],
       transit: transit['transit'],
@@ -146,7 +146,7 @@ const Details = ({ getResult, loadChecked }) => {
     }
     console.log(IndexList, '인덱스리스트 요청보냄');
 
-    await API.post('/recommendation/getRate', {
+    await API.post('/api/recommendation/getRate', {
       IndexList: IndexList,
       region1: result[0][0],
       region2: result[1][0],

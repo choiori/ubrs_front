@@ -19,7 +19,7 @@ const Contents1 = (props) => {
   useEffect(() => {
     console.log('props.result1: ', props.result1);
     console.log('props.result1[0]: ', props.result1[0]);
-    API.get('/result/popup/', {
+    API.get('/api/result/popup/', {
       params: { id: 1, dong_name: props.result1[0] },
     }).then((res) => {
       setDBResult1(res.data);

@@ -33,7 +33,7 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
     console.log('확인"::::', userID);
     console.log('확인"::::', requestTime);
     //setcurrentUrl(window.location.href + `${userID}/${requestTime}`);
-    await API.post(`/assess/${userID}/${requestTime}`, {
+    await API.post(`/api/assess/${userID}/${requestTime}`, {
       resultForSession: resultForSession,
       feedbackNo: feedbackNo,
       assess: tmp,
