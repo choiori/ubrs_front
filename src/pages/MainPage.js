@@ -11,7 +11,8 @@ const MainPage = () => {
     //const rand_0_99 = Math.floor(Math.random() * 100000);
     const id = uuidv4();
     console.log('식별자', id);
-    API.post('/api/main', { userID: id }).then((res) =>
+    API.post('/api/main', { userID: id }).then(
+      (res) => console.log(res.body.userID),
       console.log('사용자세션: ', res.cookie),
     );
   }, []);
