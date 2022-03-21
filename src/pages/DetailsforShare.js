@@ -9,8 +9,8 @@ import useSessionStorage from '../useSessionStorage';
 //import { set } from '../../node_modules/immer/dist/internal';
 
 const DetailsforShare = () => {
-  const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
-  const [result, setResult] = useState(resultShare[(3, 5)]);
+  // const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
+  //const [result, setResult] = useState(resultShare[(3, 5)]);
 
   const [ashowPopup, setaShowPopup] = useState(false);
   const atogglePopup = () => {
