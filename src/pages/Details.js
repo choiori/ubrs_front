@@ -25,10 +25,15 @@ const Details = ({ getResult, loadChecked }) => {
     [],
   );
   const [forShare, setForShare] = useSessionStorage('forShare', []);
+
+  const [Rate1, setRate1] = useSessionStorage('Rate1');
+  const [Rate2, setRate2] = useSessionStorage('Rate2');
+  const [Rate3, setRate3] = useSessionStorage('Rate3');
+
   //const [result1List, setResultList1] = useState();
-  const [Rate1, setRate1] = useState();
-  const [Rate2, setRate2] = useState();
-  const [Rate3, setRate3] = useState();
+  // const [Rate1, setRate1] = useState();
+  // const [Rate2, setRate2] = useState();
+  // const [Rate3, setRate3] = useState();
   const [showRate, setshowRate] = useState(false);
 
   const [loading, setLoading] = useState(true);

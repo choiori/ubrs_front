@@ -14,6 +14,9 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
   const [assess, setAssess] = useState(null);
   const [feedbackNo, setfeedbackNo] = useState(props.feedback);
   const [alarm, setAlarm] = useState(false);
+  const Rate1 = sessionStorage.getItem('Rate1');
+  const Rate2 = sessionStorage.getItem('Rate2');
+  const Rate3 = sessionStorage.getItem('Rate3');
 
   /*useEffect(() => {
     try {
@@ -37,6 +40,9 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
       resultForSession: resultForSession,
       feedbackNo: feedbackNo,
       assess: tmp,
+      Rate1: Rate1,
+      Rate2: Rate2,
+      Rate3: Rate3,
     })
       .then(() => {
         console.log('보냈음!!!!!!!!><');
