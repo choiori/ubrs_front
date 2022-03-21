@@ -33,11 +33,7 @@ const SocialContent = () => {
     }
   }, []);
 
-  //const currentUrl = window.location.href;
-
   const submitSession = async () => {
-    console.log('보냈음!!!!!!!!><');
-    //setcurrentUrl(window.location.href + `${userID}/${requestTime}`);
     API.post(`/api/result/${userID}/${requestTime}`, {
       resultForSession: resultForSession,
       forShare: forShare,
@@ -46,7 +42,6 @@ const SocialContent = () => {
       Rate2: Rate2,
       Rate3: Rate3,
     }).then(() => {
-      //setcurrentUrl(res.body.url);
       console.log(currentUrl);
     });
   };

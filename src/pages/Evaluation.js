@@ -17,35 +17,19 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
   const Rate1 = sessionStorage.getItem('Rate1');
   const Rate2 = sessionStorage.getItem('Rate2');
   const Rate3 = sessionStorage.getItem('Rate3');
-
-  /*useEffect(() => {
-    try {
-      setAlarm(false);
-      setfeedbackNo(feedback);
-      console.log(feedbackNo);
-      console.log(currentUrl);
-    } catch (ex) {
-      console.log('오류');
-    }
-  }, []);*/
-
-  //const currentUrl = window.location.href;
+  const mapforShare = sessionStorage.getItem('mapforShare');
 
   const submitAssess = async (tmp) => {
-    console.log('확인"::::', resultForSession);
-    console.log('확인"::::', userID);
-    console.log('확인"::::', requestTime);
-    //setcurrentUrl(window.location.href + `${userID}/${requestTime}`);
     await API.post(`/api/assess/${userID}/${requestTime}`, {
       resultForSession: resultForSession,
       feedbackNo: feedbackNo,
+      mapforShare: mapforShare,
       assess: tmp,
       Rate1: Rate1,
       Rate2: Rate2,
       Rate3: Rate3,
     })
       .then(() => {
-        console.log('보냈음!!!!!!!!><');
         console.log(currentUrl);
       })
       .then(() => {

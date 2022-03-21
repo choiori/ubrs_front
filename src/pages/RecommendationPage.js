@@ -173,14 +173,10 @@ const RecommendationPage = (props, { text }) => {
         <button className="recommendbt" onClick={nextPageConfirm}>
           추천받기
         </button>
-
-        {/*<Link onClick={nextPageConfirm}>추천받기</Link>*/}
       </div>
       <br />
     </div>
   );
 };
-/*<Link onclick={nextPageConfirm} to="/result">
-          추천받기
-  </Link>*/
+
 export default RecommendationPage;

@@ -111,20 +111,6 @@ const Details = ({ getResult, loadChecked }) => {
         const regionResult = res.data.slice(2);
         setResult(regionResult);
 
-        // function setData() {
-        //   return new Promise(function (resolve, reject) {
-        //     setResult(regionResult);
-        //     resolve(result);
-        //   });
-        // }
-
-        // // resolve()의 결과 값 data를 resolvedData로 받음
-        // setData().then(function (result) {
-        //   console.log('프로미스!!!!', result); // 100
-        //   getRate(result);
-        // });
-
-        //getRate(result);
         setShowEval(true);
       })
       .then((res) => {
@@ -191,9 +177,6 @@ const Details = ({ getResult, loadChecked }) => {
   const override = css`
   primary:'#009000',
   secondary: '#009000'`;
-
-  // console.log('되나', result1List);
-  //return result1List;
 
   if (loading)
     return (

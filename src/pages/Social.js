@@ -5,11 +5,6 @@ import SocialContent from './SocialContent';
 import API from '../API';
 
 const Social = () => {
-  /* useEffect(()=>{
-    API.get("/:userID/:requestTime/",{
-
-    })
-  })*/
   const [showPopup, setshowPopup] = useState(false);
   const togglePopup = () => {
     setshowPopup(true);

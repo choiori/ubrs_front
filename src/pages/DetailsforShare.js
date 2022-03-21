@@ -1,15 +1,12 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import './Detail.scss';
 import Popup from './Popup';
-//import Contents1 from './Contents1';
-//import Contents2 from './Contents2';
-//import Contents3 from './Contents3';
+
 import ContentsforShare from './ContentsforShare';
 import API from '../API';
 import useSessionStorage from '../useSessionStorage';
-//import { set } from '../../node_modules/immer/dist/internal';
 
-const DetailsforShare = () => {
+const DetailsforShare = (props) => {
   // const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
   //const [result, setResult] = useState(resultShare[(3, 5)]);
   const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
@@ -73,6 +70,10 @@ const DetailsforShare = () => {
       setResultShare(resultShare);
       console.log(res.data.Rate1);
       console.log(res.data.result1);
+      props.setmapforShare(JSON.parse(res.data.mapforShare));
+
+      props.setShowLocation(true);
+
       const result1List = res.data.result1.split(',');
       const result2List = res.data.result2.split(',');
       const result3List = res.data.result3.split(',');
@@ -138,10 +139,6 @@ const DetailsforShare = () => {
       setList1(list1);
       setList2(list2);
       setList3(list3);
-      console.log(List1);
-      List1.map((result) => console.log(result[0], result[1]));
-      //setResultShare(JSON.parse(res['data']));
-      //console.log(resultShare);
     });
   }, []);
 

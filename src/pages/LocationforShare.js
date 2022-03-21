@@ -1,36 +1,45 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import API from '../API';
-import resultReducer from '../redux/result/reducers';
-import { loadChecked } from '../redux/load/actions';
-import Loading from './Loading';
-import useSessionStorage from '../useSessionStorage';
 
 const { kakao } = window;
 
-const Location = ({ loadChecked }) => {
-  const location = useSelector((state) => state.location); //직장주소
-  const change = useSelector((state) => state.result.res);
-  const [mapforShare, setmapforShare] = useSessionStorage('mapforShare', []);
-
+const LocationforShare = (props) => {
+  const [location, setlocation] = useState();
+  const [splitLocation, setsplitLocation] = useState([
+    '37.5465770572176',
+    '126.96458430932942',
+  ]);
   const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
-    API.get('/api/recommendation/addressformap').then((res) => {
-      setShowMap(true);
-      setTempLoc1(res.data[0]);
-      setTempLoc2(res.data[1]);
-      setTempLoc3(res.data[2]);
-      setmapforShare([location, res.data[0], res.data[1], res.data[2]]);
-    });
-  }, [change]);
+    try {
+      console.log('전달받음?? ', props.mapforShare);
+      console.log('props.mapforShare: ', props.mapforShare[0]);
+      console.log('props.mapforShare: ', props.mapforShare[1]).then(() => {
+        setlocation(props.mapforShare[0]);
+        setsplitLocation(location['location'].split(','));
+        setTempLoc1(props.mapforShare[1]);
+        setTempLoc2(props.mapforShare[2]);
+        setTempLoc3(props.mapforShare[3]);
+      });
+      console.log('location', location);
+    } catch {}
+
+    setShowMap(true);
+    //setShowMap(false);
+    //console.log('바뀐뒤 :', tempLoc1);
+  }, []);
+  useEffect(() => {
+    console.log(location);
+    setTempLoc1(props.mapforShare[1]);
+    setTempLoc2(props.mapforShare[2]);
+    setTempLoc3(props.mapforShare[3]);
+  }, [splitLocation]);
 
   const [tempLoc1, setTempLoc1] = useState(['임시이름', 37.476796, 127.100387]); //추천결과임시좌표
   const [tempLoc2, setTempLoc2] = useState(['임시이름', 37.539123, 127.143163]);
   const [tempLoc3, setTempLoc3] = useState(['임시이름', 37.566092, 126.830395]);
 
-  const splitLocation = location['location'].split(',');
   useEffect(() => {
     var container = document.getElementById('map');
     var options = {
@@ -86,7 +95,6 @@ const Location = ({ loadChecked }) => {
       });
     }
   }, [tempLoc1, tempLoc2, tempLoc3]);
-  //if (load) return <Loading />;
 
   return (
     <div
@@ -102,4 +110,4 @@ const Location = ({ loadChecked }) => {
   );
 };
 
-export default Location;
+export default LocationforShare;
