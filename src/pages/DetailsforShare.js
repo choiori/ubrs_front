@@ -63,7 +63,7 @@ const DetailsforShare = () => {
     console.log(urlArray[2]);
     console.log(urlArray[3]);
 
-    API.post(`/share/${urlArray[2]}/${urlArray[3]}`, {
+    API.post(`/api/share/${urlArray[2]}/${urlArray[3]}`, {
       userID: urlArray[2],
       requestTime: urlArray[3],
     }).then((res) => {
