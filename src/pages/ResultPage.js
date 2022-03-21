@@ -38,7 +38,7 @@ const ResultPage = ({ getResult, loadChecked }) => {
       <Details />
       <br />
       <br />
-      {<Social />}
+      <Social />
       <br />
       <br />
       <br />
