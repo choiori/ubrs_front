@@ -40,7 +40,7 @@ const SharePage = () => {
         <Link to="/recommendation">← 다시 설정</Link>
       </div>
 
-      <DetailsforShare result={resultShare} />
+      <DetailsforShare />
       <br />
       <br />
     </div>
