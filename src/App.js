@@ -12,8 +12,8 @@ const App = () => {
     <>
       <Route component={MainPage} path exact="/" />
       <Route component={RecommendationPage} path="/recommendation" />
+      <Route component={SharePage} exact path="/share/:UserID/:requestTime" />
       <Route component={ResultPage} path="/result" />
-      <Route component={SharePage} path="/share" />
       <Route component={ErrorPage} path="/error" />
     </>
   );

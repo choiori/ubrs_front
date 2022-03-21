@@ -16,9 +16,12 @@ const SocialContent = () => {
   const resultForSession = JSON.parse(ResultForSession);
   const userID = resultForSession[0]['userID'];
   const requestTime = resultForSession[1];
-  const currentUrl = window.location.href + `share/${userID}/${requestTime}`;
+  const currentUrl = `https://nervous-morse-0d4e14.netlify.app/share/${userID}/${requestTime}`;
   const forShare = sessionStorage.getItem('forShare');
   const mapforShare = sessionStorage.getItem('mapforShare');
+  const Rate1 = sessionStorage.getItem('Rate1');
+  const Rate2 = sessionStorage.getItem('Rate2');
+  const Rate3 = sessionStorage.getItem('Rate3');
 
   useEffect(() => {
     try {
@@ -35,10 +38,13 @@ const SocialContent = () => {
   const submitSession = async () => {
     console.log('보냈음!!!!!!!!><');
     //setcurrentUrl(window.location.href + `${userID}/${requestTime}`);
-    API.post(`/result/${userID}/${requestTime}`, {
+    API.post(`/api/result/${userID}/${requestTime}`, {
       resultForSession: resultForSession,
       forShare: forShare,
       mapforShare: mapforShare,
+      Rate1: Rate1,
+      Rate2: Rate2,
+      Rate3: Rate3,
     }).then(() => {
       //setcurrentUrl(res.body.url);
       console.log(currentUrl);
