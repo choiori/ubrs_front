@@ -11,7 +11,7 @@ import useSessionStorage from '../useSessionStorage';
 const DetailsforShare = () => {
   // const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
   //const [result, setResult] = useState(resultShare[(3, 5)]);
-
+  const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
   const [ashowPopup, setaShowPopup] = useState(false);
   const atogglePopup = () => {
     setaShowPopup(true);
