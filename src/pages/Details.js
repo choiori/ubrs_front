@@ -231,7 +231,9 @@ const Details = ({ getResult, loadChecked }) => {
                     <span>개</span>
                   )}
                   &nbsp;&nbsp;&nbsp;
-                  <span className={Rate1[result1[0]]}>{Rate1[result1[0]]}</span>
+                  <span className={Rate1[result1[0]]}>
+                    {Rate1[result1[0]]} &nbsp;&nbsp;
+                  </span>
                   &nbsp;
                   <br />
                 </span>
@@ -294,7 +296,7 @@ const Details = ({ getResult, loadChecked }) => {
                   &nbsp;&nbsp;&nbsp;
                   <span className={Rate2[result1[0]]}>
                     {' '}
-                    {Rate2[result1[0]]}
+                    {Rate2[result1[0]]} &nbsp;&nbsp;
                   </span>{' '}
                   <br />
                 </span>
@@ -359,7 +361,7 @@ const Details = ({ getResult, loadChecked }) => {
                   &nbsp;&nbsp;&nbsp;
                   <span className={Rate3[result1[0]]}>
                     {' '}
-                    {Rate3[result1[0]]}
+                    {Rate3[result1[0]]} &nbsp;&nbsp;
                   </span>{' '}
                   <br />
                 </span>
