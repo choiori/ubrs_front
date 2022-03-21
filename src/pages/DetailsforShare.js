@@ -63,9 +63,9 @@ const DetailsforShare = () => {
     console.log(urlArray[2]);
     console.log(urlArray[3]);
 
-    API.post(`/api/share/${urlArray[2]}/${urlArray[3]}`, {
-      userID: urlArray[2],
-      requestTime: urlArray[3],
+    API.post(`/api/share/${urlArray[-2]}/${urlArray[-1]}`, {
+      userID: urlArray[-1],
+      requestTime: urlArray[-2],
     }).then((res) => {
       // console.log('응답옴: ', res);
       console.log(res.data);
