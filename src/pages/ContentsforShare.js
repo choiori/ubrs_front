@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import API from '../../../../../졸프/front/src/API';
+import API from '../API';
 import './Contents1.scss';
 import {
   MdSchool,
