@@ -1,9 +1,10 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import './Detail.scss';
 import Popup from './Popup';
-import Contents1 from './Contents1';
-import Contents2 from './Contents2';
-import Contents3 from './Contents3';
+//import Contents1 from './Contents1';
+//import Contents2 from './Contents2';
+//import Contents3 from './Contents3';
+import ContentsforShare from './ContentsforShare';
 import API from '../API';
 import useSessionStorage from '../useSessionStorage';
 //import { set } from '../../node_modules/immer/dist/internal';
@@ -191,11 +192,12 @@ const DetailsforShare = () => {
               maskClosable={true}
               onClose={closeaPopup}
             >
-              <Contents1
-                Result1List={Result1List}
-                Price1={Price1}
-                List1={List1}
-                Rate1={Rate1}
+              <ContentsforShare
+                id={'a'}
+                ResultList={Result1List}
+                Price={Price1}
+                List={List1}
+                Rate={Rate1}
               />
             </Popup>
           )}
@@ -250,11 +252,12 @@ const DetailsforShare = () => {
               maskClosable={true}
               onClose={closebPopup}
             >
-              <Contents2
-                Result2List={Result2List}
-                Price2={Price2}
-                List2={List2}
-                Rate2={Rate2}
+              <ContentsforShare
+                id={'b'}
+                ResultList={Result2List}
+                Price={Price2}
+                List={List2}
+                Rate={Rate2}
               />
             </Popup>
           )}
@@ -309,11 +312,12 @@ const DetailsforShare = () => {
               maskClosable={true}
               onClose={closecPopup}
             >
-              <Contents3
-                Result3List={Result3List}
-                Price3={Price3}
-                List3={List3}
-                Rate3={Rate3}
+              <ContentsforShare
+                id={'c'}
+                ResultList={Result3List}
+                Price={Price3}
+                List={List3}
+                Rate={Rate3}
               />
             </Popup>
           )}
