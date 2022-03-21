@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import './Detail.scss';
 import Popup from './Popup';
 import Contents1 from './Contents1';
@@ -47,9 +47,9 @@ const DetailsforShare = () => {
   const [List2, setList2] = useState([]);
   const [List3, setList3] = useState([]);
 
-  //const [Result1, setResult1] = useState([]);
-  //const [Result2, setResult2] = useState([]);
-  //const [Result3, setResult3] = useState([]);
+  const [Result1, setResult1] = useState([]);
+  const [Result2, setResult2] = useState([]);
+  const [Result3, setResult3] = useState([]);
 
   const [Rate1, setRate1] = useState([]);
   const [Rate2, setRate2] = useState([]);
