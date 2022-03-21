@@ -9,7 +9,7 @@ import axios from '../../node_modules/axios/index';
 import useSessionStorage from '../useSessionStorage';
 
 const SharePage = () => {
-  // const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
+  const [resultShare, setResultShare] = useSessionStorage('resultShare', []);
 
   useEffect(() => {
     const url = window.location.pathname;
