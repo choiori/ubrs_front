@@ -34,7 +34,21 @@ const Medical = ({ hosChecked }) => {
         }}
         checked={checkedInputs.includes('병의원 및 약국') ? true : false}
       />
-      병의원 및 약국
+      <span data-tip data-for="병의원 및 약국">
+        병의원 및 약국
+      </span>
+      <ReactTooltip
+        id="병의원 및 약국"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          수도권 지역별 시도에서 제공한 병의원 (2021년)
+          <br />
+          행정안전부에서 제공한 약국 (2021년)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -45,7 +59,21 @@ const Medical = ({ hosChecked }) => {
         }}
         checked={checkedInputs.includes('보건소') ? true : false}
       />
-      보건소
+      <span data-tip data-for="보건소">
+        보건소
+      </span>
+      <ReactTooltip
+        id="보건소"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          전국 지역보건의료기관 데이터의 보건소
+          <br />
+          (2019년 보건복지부 제공)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input

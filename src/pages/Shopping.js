@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { shopChecked } from '../redux/checked/actions'; //action
 import './Shopping.scss';
 import useSessionStorage from '../useSessionStorage';
+import ReactTooltip from '../../node_modules/react-tooltip';
 const Shopping = ({ shopChecked }) => {
   //const [checkedInputs, setCheckedInputs] = useState([]);
   const [checkedInputs, setCheckedInputs] = useSessionStorage(
@@ -32,7 +33,21 @@ const Shopping = ({ shopChecked }) => {
         }}
         checked={checkedInputs.includes('백화점') ? true : false}
       />
-      백화점
+      <span data-tip data-for="백화점">
+        백화점
+      </span>
+      <ReactTooltip
+        id="백화점"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          행정안전부에서 제공한 대규모점포 데이터중 백화점
+          <br />
+          (2021년 제공)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -43,7 +58,21 @@ const Shopping = ({ shopChecked }) => {
         }}
         checked={checkedInputs.includes('대형마트') ? true : false}
       />
-      대형마트
+      <span data-tip data-for="대형마트">
+        대형마트
+      </span>
+      <ReactTooltip
+        id="대형마트"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          행정안전부에서 제공한 대규모점포 데이터중 대형마트
+          <br />
+          (2021년 제공)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -54,7 +83,21 @@ const Shopping = ({ shopChecked }) => {
         }}
         checked={checkedInputs.includes('복합쇼핑센터') ? true : false}
       />
-      복합쇼핑센터
+      <span data-tip data-for="복합쇼핑센터">
+        복합쇼핑센터
+      </span>
+      <ReactTooltip
+        id="복합쇼핑센터"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          행정안전부에서 제공한 대규모점포 데이터중 쇼핑센터, 복합쇼핑몰
+          <br />
+          (2021년 제공)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -65,7 +108,21 @@ const Shopping = ({ shopChecked }) => {
         }}
         checked={checkedInputs.includes('시장') ? true : false}
       />
-      시장
+      <span data-tip data-for="시장">
+        시장
+      </span>
+      <ReactTooltip
+        id="시장"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          행정안전부에서 제공한 대규모점포 데이터중 시장
+          <br />
+          (2021년 제공)
+        </span>
+      </ReactTooltip>
       {console.log(checkedInputs)}
     </div>
   );

@@ -78,7 +78,25 @@ const Secure = ({ secureChecked }) => {
         }}
         checked={checkedInputs.includes('여성안심지킴이집') ? true : false}
       />
-      여성안심지킴이집
+      <span data-tip data-for="여성안심지킴이집">
+        여성안심지킴이집
+      </span>
+      <ReactTooltip
+        id="여성안심지킴이집"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          위급한 상황에 처한 여성들의 긴급 대피와 안전한 귀가를 지원
+          <br />
+          (주로 24시간 운영 편의점 지정)
+          <br />
+          전국여성안심지킴이표준데이터에서의 여성안심지킴이집
+          <br />
+          (2022년 공공데이터포털 제공)
+        </span>
+      </ReactTooltip>
       {console.log(checkedInputs)}
     </div>
   );
