@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { secureChecked } from '../redux/checked/actions'; //action
 import useSessionStorage from '../useSessionStorage';
+import ReactTooltip from '../../node_modules/react-tooltip';
 const Secure = ({ secureChecked }) => {
   //const [checkedInputs, setCheckedInputs] = useState([]);
   const [checkedInputs, setCheckedInputs] = useSessionStorage(
@@ -31,7 +32,21 @@ const Secure = ({ secureChecked }) => {
         }}
         checked={checkedInputs.includes('범죄안전등급') ? true : false}
       />
-      범죄안전등급
+      <span data-tip data-for="범죄안전등급">
+        범죄안전등급
+      </span>
+      <ReactTooltip
+        id="범죄안전등급"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          행정안전부에서 제공한 2021년 지역안전등급
+          <br />
+          (1등급일수록 상대적으로 안전)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -42,7 +57,17 @@ const Secure = ({ secureChecked }) => {
         }}
         checked={checkedInputs.includes('경찰관서') ? true : false}
       />
-      경찰관서
+      <span data-tip data-for="경찰관서">
+        경찰관서
+      </span>
+      <ReactTooltip
+        id="경찰관서"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>경찰청에서 제공한 지역경찰청별 지구대, 파출소</span>
+      </ReactTooltip>
       <br />
       <br />
       <input

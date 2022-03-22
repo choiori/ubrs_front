@@ -193,6 +193,9 @@ const Details = ({ getResult, loadChecked }) => {
   return (
     <div className="Detail">
       <div className="dsc">
+        <span className="rate">지역별 해당 지표 상대적 등급</span>
+        <br />
+        <br />
         최대값 ~ 상위 25%: <span className="최상">최상</span>, &nbsp; 상위 26% ~
         상위 50%: <span className="상">상&nbsp;</span>, &nbsp;&nbsp; 상위 51%~
         상위 75%: <span className="중">중&nbsp;</span>, &nbsp;&nbsp; 상위 76% ~

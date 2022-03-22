@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { hosChecked } from '../redux/checked/actions'; //action
 import './Medical.scss';
 import useSessionStorage from '../useSessionStorage';
+import ReactTooltip from '../../node_modules/react-tooltip';
+
 const Medical = ({ hosChecked }) => {
   //const [checkedInputs, setCheckedInputs] = useState([]);
   const [checkedInputs, setCheckedInputs] = useSessionStorage(
@@ -54,7 +56,21 @@ const Medical = ({ hosChecked }) => {
         }}
         checked={checkedInputs.includes('응급의료기관시설') ? true : false}
       />
-      응급의료기관시설
+      <span data-tip data-for="응급의료기관시설">
+        응급의료기관시설
+      </span>
+      <ReactTooltip
+        id="응급의료기관시설"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          응급의료기관: 권역응급의료센터 및 지역응급의료센터, 지역응급의료기관
+          <br />
+          응급의료시설: 응급의료기관 이외의 의료기관
+        </span>
+      </ReactTooltip>
       {console.log(checkedInputs)}
     </div>
   );
