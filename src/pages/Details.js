@@ -192,19 +192,18 @@ const Details = ({ getResult, loadChecked }) => {
 
   return (
     <div className="Detail">
+      <div className="dsc">
+        최대값 ~ 상위 25%: <span className="최상">최상</span>, &nbsp; 상위 26% ~
+        상위 50%: <span className="상">상&nbsp;</span>, &nbsp;&nbsp; 상위 51%~
+        상위 75%: <span className="중">중&nbsp;</span>, &nbsp;&nbsp; 상위 76% ~
+        최소값: <span className="하">하&nbsp;</span>로 표시됩니다 &nbsp;&nbsp;
+        <br />
+        <span className="없음">(추천 지표가 없는 지역은 제외하여 산출)</span>
+        <br />
+      </div>
+      <br />
+      <br />
       <div className="d1">
-        <div className="dsc">
-          최대값 ~ 상위 25%: <span className="최상">최상</span>, &nbsp; 상위 26%
-          ~ 상위 50%: <span className="상">상&nbsp;</span>, &nbsp;&nbsp; 상위
-          51%~ 상위 75%: <span className="중">중&nbsp;</span>, &nbsp;&nbsp; 상위
-          76% ~ 최소값: <span className="하">하&nbsp;</span>로 표시됩니다
-          &nbsp;&nbsp;
-          <br />
-          <span className="없음">(추천 지표가 없는 지역은 제외하여 산출)</span>
-          <br />
-        </div>
-        <br />
-        <br />
         <div className="number1" style={{ display: 'inline-block' }}>
           a
         </div>
