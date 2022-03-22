@@ -3,6 +3,7 @@ import './Children.scss';
 import { connect } from 'react-redux';
 import { childrenChecked } from '../redux/checked/actions'; //action
 import useSessionStorage from '../useSessionStorage';
+import ReactTooltip from '../../node_modules/react-tooltip';
 const Children = ({ childrenChecked }) => {
   //const [checkedInputs, setCheckedInputs] = useState([]);
   const [checkedInputs, setCheckedInputs] = useSessionStorage(
@@ -33,7 +34,21 @@ const Children = ({ childrenChecked }) => {
         }}
         checked={checkedInputs.includes('유치원 및 어린이집') ? true : false}
       />
-      유치원 및 어린이집
+      <span data-tip data-for="유치원 및 어린이집">
+        유치원 및 어린이집
+      </span>
+      <ReactTooltip
+        id="유치원 및 어린이집"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          유치원 공시자료, 전국어린이집표준데이터에서의 유치원과 어린이집
+          <br />
+          (2020년 교육부, 사회보장정보원 제공)
+        </span>
+      </ReactTooltip>
       <br />
       <br />
       <input
@@ -44,7 +59,21 @@ const Children = ({ childrenChecked }) => {
         }}
         checked={checkedInputs.includes('놀이터') ? true : false}
       />
-      놀이터
+      <span data-tip data-for="놀이터">
+        놀이터
+      </span>
+      <ReactTooltip
+        id="놀이터"
+        type="light"
+        backgroundColor="#b2e7b2"
+        place="left"
+      >
+        <span>
+          전국도시공원정보표준데이터에서의 어린이공원(놀이터)
+          <br />
+          (2021년 공공데이터포털 제공)
+        </span>
+      </ReactTooltip>
       {console.log(checkedInputs)}
     </div>
   );
