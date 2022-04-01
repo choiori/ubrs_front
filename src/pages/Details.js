@@ -265,6 +265,7 @@ const Details = ({ getResult, loadChecked }) => {
             ResultForSession={ResultForSession}
             feedback={'feedback1'}
             showEval={showEval}
+            dongName={result[0][0]}
           />
         ) : null}
       </div>
@@ -330,6 +331,7 @@ const Details = ({ getResult, loadChecked }) => {
             ResultForSession={ResultForSession}
             feedback={'feedback2'}
             showEval={showEval}
+            dongName={result[1][0]}
           />
         ) : null}
       </div>
@@ -393,6 +395,7 @@ const Details = ({ getResult, loadChecked }) => {
             ResultForSession={ResultForSession}
             feedback={'feedback3'}
             showEval={showEval}
+            dongName={result[2][0]}
           />
         ) : null}
       </div>
