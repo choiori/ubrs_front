@@ -4,6 +4,8 @@ import { MdThumbUp, MdThumbDown } from 'react-icons/md';
 import './Evaluation.scss';
 import { useEffect } from 'react';
 import API from '../API';
+import FeedbackPopup from './FeedbackPopup';
+import FeedbackContent from './FeedbackContent';
 
 const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
   const ResultForSession = sessionStorage.getItem('ResultForSession');
@@ -18,6 +20,16 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
   const Rate2 = sessionStorage.getItem('Rate2');
   const Rate3 = sessionStorage.getItem('Rate3');
   const mapforShare = sessionStorage.getItem('mapforShare');
+
+  const [dongName, setDongName] = useState(props.dongName);
+
+  const [showPopup, setshowPopup] = useState(false);
+  const togglePopup = () => {
+    setshowPopup(true);
+  };
+  const closePopup = () => {
+    setshowPopup(false);
+  };
 
   const submitAssess = async (tmp) => {
     await API.post(`/api/assess/${userID}/${requestTime}`, {
@@ -57,23 +69,55 @@ const Evaluation = (/*feedback,*/ props /*ResultForSession*/) => {
           id="love"
           style={{ background: 'none', border: 'none' }}
           onClick={() => {
+            togglePopup();
             submitAssess('good');
-            alert('서버로 전송되었습니다!👍');
+            //alert('서버로 전송되었습니다!👍');
           }}
         >
           <MdThumbUp size="20" color="#009000" />
           &nbsp;&nbsp;
         </button>
+        {showPopup && (
+          <FeedbackPopup
+            visible={showPopup}
+            closable={true}
+            maskClosable={true}
+            onClose={closePopup}
+          >
+            <FeedbackContent
+              feedbackNo={feedbackNo}
+              userID={userID}
+              requestTime={requestTime}
+              dongName={dongName}
+            />
+          </FeedbackPopup>
+        )}
         <button
           id="hate"
           style={{ background: 'none', border: 'none' }}
           onClick={() => {
+            togglePopup();
             submitAssess('bad');
-            alert('서버로 전송되었습니다!👎');
+            //alert('서버로 전송되었습니다!👎');
           }}
         >
           <MdThumbDown size="20" color="#009000" />
         </button>
+        {showPopup && (
+          <FeedbackPopup
+            visible={showPopup}
+            closable={true}
+            maskClosable={true}
+            onClose={closePopup}
+          >
+            <FeedbackContent
+              feedbackNo={feedbackNo}
+              userID={userID}
+              requestTime={requestTime}
+              dongName={dongName}
+            />
+          </FeedbackPopup>
+        )}
       </div>
     </div>
   );

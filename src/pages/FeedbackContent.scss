@@ -1,0 +1,24 @@
+.bold {
+  font-weight: bolder;
+  color: #009000;
+}
+.small {
+  font-size: x-small;
+}
+.text {
+  width: 60%;
+}
+.submit {
+  float: right;
+  margin-right: 10%;
+  border: 0;
+  background-color: #009000;
+  color: white;
+  padding: 0.7%;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.error {
+  font-size: smaller;
+  margin-top: 2%;
+}
